@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+      integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+      integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+      crossorigin=""
+    ></script>
+    <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
+  <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="chizu.js"></script>
+  <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
+    <!-- This line removes any default padding and style.
+       You might only need one of these values set. -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,300&display=swap");
+
+      body {
+        padding: 0;
+        margin: 0;
+        background-color: aliceblue;
+      }
+
+      #mapid {
+        width: 800px;
+        height: 600px;
+      }
+
+      h3 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 24px;
+        color: #091ca3;
+      }
+
+      li {
+        font-family: "Lora", serif;
+      }
+
+      ol {
+        font-size: 18px;
+      }
+
+      button,
+      label {
+        font-family: "Lora", serif;
+      }
+
+      li button {
+        position: relative;
+        left: 8px;
+        border-radius: 50%;
+        width: 28px;
+        text-align: center;
+        border: none;
+        padding: 3px;
+        background-color: #a90078;
+        color: white;
+        font-size: 15px;
+      }
+
+      #type1 li:hover {
+        text-decoration: underline 3px #1ad78e;
+        text-underline-offset: 3px;
+      }
+
+      #type2 li:hover {
+        text-decoration: underline 3px #b75ee3;
+        text-underline-offset: 3px;
+      }
+
+      #json-btn {
+        border: none;
+        padding: 8px;
+        border-radius: 4%;
+        background-color: #d5ddff;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="mapid"></div>
+    <input
+      type="radio"
+      id="one"
+      name="type"
+      checked="checked"
+      onchange="onTypeChange(this)"
+      value="1"
+    />
+    <label for="one">I visited</label><br />
+    <input
+      type="radio"
+      id="two"
+      name="type"
+      onchange="onTypeChange(this)"
+      value="2"
+    />
+    <label for="two">I'd like to visit</label><br />
+  </body>
+</html>
